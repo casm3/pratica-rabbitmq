@@ -1,4 +1,12 @@
-# 🚀 Lista de Exercícios: Pedidos, Mensageria e Estoque
+-----
+
+<p align="center">
+  <img alt="upe" src="./img/upe-logo.png"/>
+</p>
+
+-----
+
+# 🚀 Prática de RabbitMQ
 
 **Integração de Sistemas**
 
