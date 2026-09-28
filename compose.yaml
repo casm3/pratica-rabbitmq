@@ -1,0 +1,19 @@
+services:
+  pedidos:
+    build: ./pedidos
+    ports:
+      - "8000:8000"
+    environment:
+      RABBITMQ_HOST: rabbitmq
+    depends_on:
+      - rabbitmq
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+
+  estoque-legado:
+    build: ./estoque_legado
+    ports:
+      - "8001:8000"
