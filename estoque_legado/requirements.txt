@@ -1,1 +1,2 @@
-spyne>=2.14,<3
+spyne>=2.14
+lxml
