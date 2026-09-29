@@ -8,6 +8,13 @@ services:
     depends_on:
       - rabbitmq
 
+  notificacoes:
+    build: ./notificacoes
+    environment:
+      RABBITMQ_HOST: rabbitmq
+    depends_on:
+      - rabbitmq
+
   rabbitmq:
     image: rabbitmq:3-management
     ports:
