@@ -5,8 +5,10 @@ services:
       - "8000:8000"
     environment:
       RABBITMQ_HOST: rabbitmq
+      ESTOQUE_URL: http://estoque-adapter:8000
     depends_on:
       - rabbitmq
+      - estoque-adapter
 
   notificacoes:
     build: ./notificacoes
@@ -24,3 +26,12 @@ services:
     build: ./estoque_legado
     ports:
       - "8001:8000"
+
+  estoque-adapter:
+    build: ./estoque_adapter
+    ports:
+      - "8002:8000"
+    environment:
+      ESTOQUE_WSDL: http://estoque-legado:8000/?wsdl
+    depends_on:
+      - estoque-legado

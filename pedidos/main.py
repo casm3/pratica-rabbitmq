@@ -59,8 +59,8 @@ def criar_pedido(pedido: NovoPedido) -> dict[str, int | str]:
         publicar(evento)
     except pika.exceptions.AMQPError as erro:
         raise HTTPException(
-            status_code=503,
+            status_code=503, 
             detail="Fila indisponível"
-        ) from erro
+            ) from erro
     pedidos.append(dados)
     return {"id": identificador, "status": "recebido"}
